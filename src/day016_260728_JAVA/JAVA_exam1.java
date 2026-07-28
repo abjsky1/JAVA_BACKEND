@@ -27,6 +27,8 @@ public class JAVA_exam1 {
         
         // ** [ main 함수 안 ] 선언/만들기  ,  실행문 가능 **
         int b = 10;  // 가능
+        System.out.println(b);
+
 
         // [2] 콘솔에 출력문 실행하기
         // sout + 엔터/탭  = JS의 console.log( ) 와 동일한 역할
