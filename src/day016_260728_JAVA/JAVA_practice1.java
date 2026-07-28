@@ -68,7 +68,7 @@ height = 175.5333;
 
 System.out.println("제 이름은 " + name + ", 나이는 " + age1 +"세, 키는 " + height + "cm 입니다.");
 
-System.out.printf("제 이름은 %s, 나이는 %int 세, 키는 %d cm 입니다.", name, age1, height);
+System.out.printf("제 이름은 %s , 나이는 %d 세, 키는 %1.1f cm 입니다.", name, age1, height);
 
 
 /* 문제6: 아래와 같이 이스케이프 문자를 이용하여 콘솔에 출력하는 코드를 작성하시오.
