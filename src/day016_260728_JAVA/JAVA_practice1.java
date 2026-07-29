@@ -1,5 +1,7 @@
 package day016_260728_JAVA;
 
+import java.util.Scanner;
+
 public class JAVA_practice1 {
 
 public static void main(String[] args) {
@@ -85,6 +87,11 @@ System.out.printf("제 이름은 %s , 나이는 %d 세, 키는 %1.1f cm 입니�
 
  */
 
+System.out.println("\n|\\_/|\n|q p|   /}\n( 0 )\"\"\"\\\n|\"^\"`    |\n||_/=\\\\__|\n");
+
+
+
+ 
 
 /* 문제7 : 아래 조건에 3가지의 변수가 주어졌을때. 그림과 같이 printf 이용한 출력 하는 코드를 작성하시오.
 
@@ -106,6 +113,16 @@ String content = "안녕하세요!"; // 문자열 "안녕하세요!"를 저장�
 
 */
 
+int num = 1;
+String writer = "김길리";
+String content = "안녕하세요!";
+
+System.out.printf("\n=========== 방문록 ============\n%-5s %-5s %-5s\n%-7d %-5s %s\n============================\n", "번호", "작성자", "방문록", num , writer , content);
+
+
+
+
+
 
 /* 문제 8: Scanner를 이용하여 사용자의 이름(String)과 나이(int)를 입력받아, "OOO님의 나이는 OO세 입니다." 형식으로 출력하는 코드를 작성하시오.
 
@@ -120,6 +137,23 @@ String content = "안녕하세요!"; // 문자열 "안녕하세요!"를 저장�
 유재석님의 나이는 51세 입니다.
 
 */
+
+Scanner scanner = new Scanner(System.in);
+
+System.out.println("\n이름 입력");
+String name2 = scanner.next();
+
+System.out.println("\n나이 입력");
+int age2 = scanner.nextInt();
+
+System.out.printf("\n%s님의 나이는 %d세 입니다.", name2 , age2);
+
+
+
+
+
+
+
 
 /*
 
@@ -144,6 +178,29 @@ String content = "안녕하세요!"; // 문자열 "안녕하세요!"를 저장�
 내용: 정말입니다. 다들 동의하시죠?
 
 */
+System.out.println("\n게시물 번호 입력\n");
+int number = scanner.nextInt();
+
+// 주의 ! nextLine() 앞에 다른 next가 존재할 때 , 사이에 의미없는 nextLine() 추가
+// nextInt 는 정수 반환하고 엔터를 남김.
+// 남은 엔터를 가져갈 의미 없는 nextLine() 추가하여 초기화
+scanner.nextLine();
+
+System.out.println("\n제목 입력\n");
+String jemok = scanner.nextLine();
+
+System.out.println("\n내용 입력\n");
+String neyong = scanner.nextLine();
+
+System.out.printf("\n[ %d번 게시물 ]\r\n" + //
+        "\r\n" + //
+        "제목: %s\r\n" + //
+        "\r\n" + //
+        "내용: %s", number , jemok , neyong);
+
+
+
+
 
 
 /*
@@ -161,6 +218,16 @@ String content = "안녕하세요!"; // 문자열 "안녕하세요!"를 저장�
 입력하신 성별은 '남' 입니다.
 
 */
+
+
+System.out.println("\n성별 입력\n");
+char mf = scanner.next().charAt(0);
+
+System.out.printf("\n입력하신 성별은 '%s' 입니다.\n", mf);
+
+
+
+
 
 
 /*
@@ -193,11 +260,21 @@ String content = "안녕하세요!"; // 문자열 "안녕하세요!"를 저장�
 
 */
 
+//이름 (String), 나이 (int), 키 (double), 프로그래머 여부 (boolean)
 
+System.out.println("\n이름 입력\n");
+String name5 = scanner.next();
 
+System.out.println("\n나이 입력\n");
+int age5 = scanner.nextInt();
 
+System.out.println("\n키 입력\n");
+double cm5 = scanner.nextFloat();
 
+System.out.println("\n프로그래머 여부 입력\n");
+boolean pro5 = scanner.nextBoolean();
 
+System.out.printf("\n--- 자기소개 ---\n이름 : %s\n나이 : %d\n키 : %fcm\n프로그래머 여부 : %s", name5, age5, cm5, pro5 );
 
 
 
