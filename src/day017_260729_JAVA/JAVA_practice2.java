@@ -2,8 +2,6 @@ package day017_260729_JAVA;
 
 import java.util.Scanner;
 
-import javax.print.DocFlavor.STRING;
-
 public class JAVA_practice2 {
 
     public static void main(String[] args) {
