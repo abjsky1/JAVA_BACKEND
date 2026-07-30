@@ -456,11 +456,5 @@ public class JAVA_practice3 {
 
 
 
-
-
-
-
-
-
     }
 }
