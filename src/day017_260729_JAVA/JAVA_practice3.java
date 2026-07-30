@@ -87,17 +87,17 @@ public class JAVA_practice3 {
         비율: 25.0% */
 
 
-        System.out.println("첫 번째 실수 입력:");
+        System.out.println("\n첫 번째 실수 입력:");
         double d31 = scanner.nextDouble();
 
-        System.out.println("두 번째 실수 입력:");
+        System.out.println("\n두 번째 실수 입력:");
         double d32 = scanner.nextDouble();
 
         double percent3 = (d31/d32)*100;
 
-        System.out.println("비율: "+percent3+"%");
+        System.out.println("\n비율: "+percent3+"%");
 
-        System.out.printf("비율: %.1f%%", percent3);
+        System.out.printf("\n비율: %.1f%%", percent3);
 
 
 
@@ -113,7 +113,7 @@ public class JAVA_practice3 {
 
         결과: true */
         
-        System.out.println("정수 입력");
+        System.out.println("\n정수 입력");
         int int4 = scanner.nextInt();
 
         System.out.println( int4 % 2 == 1);
@@ -137,7 +137,7 @@ public class JAVA_practice3 {
 
         결과: true */
 
-        System.out.println("정수 입력");
+        System.out.println("\n정수 입력");
         int int5 = scanner.nextInt();
 
         System.out.println( int5 % 7 == 0);
@@ -161,10 +161,10 @@ public class JAVA_practice3 {
 
         결과: true */
 
-        System.out.println("아이디 입력");
+        System.out.println("\n아이디 입력");
         String id = scanner.next();
 
-        System.out.println("비밀번호 입력");
+        System.out.println("\n비밀번호 입력");
         String pw = scanner.next();
         
         System.out.println( id.equals("admin") && pw.equals("1234"));
@@ -174,7 +174,9 @@ public class JAVA_practice3 {
 
 
 
-        /*[문제 7] Scanner를 이용해 정수 하나를 입력받아, 그 수가 홀수이면서 7의 배수이면 true, 아니면 false를 출력하시오.
+        /*[문제 7] Scanner를 이용해 정수 하나를 입력받아, 
+        
+        그 수가 홀수이면서 7의 배수이면 true, 아니면 false를 출력하시오.
 
         입력 예시:
 
@@ -185,7 +187,21 @@ public class JAVA_practice3 {
         결과: true */
 
 
-        /*[문제 8] Scanner를 이용해 1차 점수와 2차 점수를 각각 int로 입력받아, 두 점수의 총점이 150점 이상이면 "합격", 아니면 "불합격"을 출력하시오.
+        System.out.println("\n정수를 입력하세요:");
+        int int7 = scanner.nextInt();
+        
+        System.out.println(int7 % 7 == 0);
+
+
+
+
+
+
+
+
+        /*[문제 8] Scanner를 이용해 1차 점수와 2차 점수를 각각 int로 입력받아, 
+        
+        두 점수의 총점이 150점 이상이면 "합격", 아니면 "불합격"을 출력하시오.
 
         입력 예시:
 
@@ -197,8 +213,27 @@ public class JAVA_practice3 {
 
         결과: 합격 */
 
+        System.out.println("\n1차 점수 입력");
+        int int81 = scanner.nextInt();
 
-        /*[문제 9]  Scanner를 이용해 이름을 String으로 입력받아, 만약 이름이 "유재석"과 일치하면 이름 뒤에 "(방장)"을 붙여서 출력하고, 아니면 입력받은 이름만 출력하시오.
+        System.out.println("\n1차 점수 입력");
+        int int82 = scanner.nextInt();
+
+        System.out.println(int81+int82 >= 150 ? "합격" : "불합격");
+
+        /* 
+        if (int81+int82 >= 150) {
+            System.out.println("합격");
+        }
+        else{ System.out.println("불합격");}
+        */
+
+
+        /*[문제 9]  Scanner를 이용해 이름을 String으로 입력받아, 
+
+        만약 이름이 "유재석"과 일치하면 이름 뒤에 "(방장)"을 붙여서 출력하고, 
+
+        아니면 입력받은 이름만 출력하시오.
 
         입력 예시 1:
 
@@ -217,7 +252,24 @@ public class JAVA_practice3 {
         강호동 */
 
 
-        /*[문제 10] Scanner를 이용해 삼각형의 밑변과 높이를 각각 double로 입력받아, 삼각형의 넓이를 계산하여 출력하시오.
+        System.out.println("\n이름을 입력하세요");
+        String str9 = scanner.next();
+
+        /*
+        if (str9.equals("김길리")) {
+            System.out.println("(방장)"+str9);
+        }else{System.out.println(str9);}
+        */
+
+        System.out.println(str9.equals("김길리") ? "(방장)"+str9 : str9);
+
+        
+
+
+
+        /*[문제 10] Scanner를 이용해 삼각형의 밑변과 높이를 각각 double로 입력받아, 
+        
+        삼각형의 넓이를 계산하여 출력하시오.
 
         요구 조건: 공식: 밑변 * 높이 / 2.0
 
@@ -229,10 +281,22 @@ public class JAVA_practice3 {
 
         출력 예시:
 
-        삼각형의 넓이: 27.5
+        삼각형의 넓이: 27.5 */
+
+        System.out.println("\n삼각형의 밑변 :");
+        double a10 = scanner.nextDouble();
+
+        System.out.println("\n삼각형의 높이 :");
+        double h10 = scanner.nextDouble();
+
+        System.out.printf("\n삼각형의 넓이는: %.1f", a10 * h10 / 2);
 
 
-        [문제 11] Scanner를 이용해 섭씨 온도를 double로 입력받아, 화씨 온도로 변환하여 출력하시오.
+
+
+        /* [문제 11] Scanner를 이용해 섭씨 온도를 double로 입력받아, 
+        
+        화씨 온도로 변환하여 출력하시오.
 
         요구 조건:
 
@@ -246,8 +310,16 @@ public class JAVA_practice3 {
 
         화씨 온도: 86.0 */
 
+        System.out.println("\n섭씨 온도 입력:");
+        double d11 = scanner.nextDouble();
 
-        /*[문제 12] Scanner를 이용해 태어난 년도(int)를 입력받아, 2025년 기준 현재 나이를 계산하여 출력하시오.
+        System.out.printf("\n화씨 온도: %.1f", (d11 * 9 / 5)+32);        
+
+
+
+        /*[문제 12] Scanner를 이용해 태어난 년도(int)를 입력받아, 
+        
+        2025년 기준 현재 나이를 계산하여 출력하시오.
 
         요구 조건:
 
@@ -262,7 +334,16 @@ public class JAVA_practice3 {
         2025년 기준 나이: 27세 */
 
 
-        /*[문제 13] Scanner를 이용해 키(cm)와 몸무게(kg)를 각각 double로 입력받아, BMI 지수를 계산하여 출력하시오.
+        System.out.println("\n태어난 년도:");
+        int int12 = scanner.nextInt();
+
+        System.out.printf("\n2025년 기준 나이: %d세", 2025-int12);
+
+
+
+        /*[문제 13] Scanner를 이용해 키(cm)와 몸무게(kg)를 각각 double로 입력받아, 
+        
+        BMI 지수를 계산하여 출력하시오.
 
         요구 조건:
 
@@ -280,8 +361,22 @@ public class JAVA_practice3 {
 
         BMI 지수: 22.34... */
 
+        System.out.println("\n키 입력");
+        double dcm = scanner.nextDouble(); 
 
-        /*[문제 14] Scanner를 이용해 아이디와 이메일을 String으로 입력받습니다. 아이디가 "admin"이거나 또는 이메일이 "admin@test.com"이면 "관리자", 그렇지 않으면 "일반 사용자"를 출력하시오.
+        System.out.println("\n몸무게 입력");
+        double dkg = scanner.nextDouble(); 
+
+        System.out.printf("\nBMI 지수: %.2f", dkg / ((dcm/100)*(dcm/100)));
+
+
+
+
+        /*[문제 14] Scanner를 이용해 아이디와 이메일을 String으로 입력받습니다. 
+        
+        아이디가 "admin"이거나 또는 이메일이 "admin@test.com"이면 "관리자", 
+        
+        그렇지 않으면 "일반 사용자"를 출력하시오.
 
         입력 예시:
 
@@ -293,8 +388,28 @@ public class JAVA_practice3 {
 
         결과: 관리자 */
 
+        System.out.println("\n아이디 입력");
+        String id14 = scanner.next();
 
-        /*[문제 15] Scanner를 이용해 100점 만점의 점수(int)를 입력받아, 점수에 따라 아래와 같이 등급을 부여하고 출력하시오.
+        System.out.println("\n이메일 입력");
+        String em14 = scanner.next();
+        
+        Boolean bool14 = id14.equals("admin") || em14.equals("admin@test.com");
+
+        /* 
+        if(bool14 == true){
+            System.out.println("관리자");
+        }else{System.out.println("일반 사용자");}
+        */  
+
+        System.out.println(bool14 == true ? "\n관리자" : "\n일반 사용자");
+
+
+
+
+        /*[문제 15] Scanner를 이용해 100점 만점의 점수(int)를 입력받아, 
+        
+        점수에 따라 아래와 같이 등급을 부여하고 출력하시오.
 
         90점 이상: 'A'
 
@@ -311,7 +426,20 @@ public class JAVA_practice3 {
         등급:B */
 
 
-        /*[문제 16] Scanner를 이용해 나이(int)를 입력받아, 20대(20세 이상 29세 이하)에 해당하는 경우 "이벤트 대상입니다."를, 그렇지 않으면 "이벤트 대상이 아닙니다."를 출력하시오.
+        System.out.println("\n점수 입력: ");
+        int int15 = scanner.nextInt();
+
+        System.out.println(int15 >= 90 ? "\nA" : int15 >= 80 ? "\nB" : int15 >= 70 ? "\nC" : "\nD");
+
+
+
+
+
+        /*[문제 16] Scanner를 이용해 나이(int)를 입력받아, 
+        
+        20대(20세 이상 29세 이하)에 해당하는 경우 "이벤트 대상입니다."를, 
+        
+        그렇지 않으면 "이벤트 대상이 아닙니다."를 출력하시오.
 
         입력 예시:
 
@@ -320,5 +448,19 @@ public class JAVA_practice3 {
         출력 예시:
 
         이벤트 대상입니다. */
+
+        System.out.println("\n나이 입력");
+        int age16 = scanner.nextInt();
+
+        System.out.println(age16 >= 20 && age16 <= 29 ? "\n이벤트 대상자입니다." : "\n이벤트 대상이 아닙니다");
+
+
+
+
+
+
+
+
+
     }
 }
