@@ -360,8 +360,14 @@ public class JAVA_practice4 {
 
         System.out.println("1~12 사이의 월 숫자로 입력:");
         int month = scanner.nextInt();
-        
+
+        if (month >= 3 && month <= 5) {System.out.println("봄");}
+        else if (month >= 6 && month <= 8) {System.out.println("여름");}
+        else if (month >= 9 && month <= 11) {System.out.println("가을");}
+        else if (month > 13 && month < 1) {System.out.println("잘못된 월입니다.");}
+        else {System.out.println("겨울");}
     
+
 
         /*[문제 12] Scanner를 이용해 서로 다른 세 개의 정수를 입력받아, 
         가장 큰 수를 출력하는 프로그램을 작성하시오.
@@ -371,6 +377,19 @@ public class JAVA_practice4 {
         세 번째 정수: 78
         출력 예시: 가장 큰 수: 78 */
 
+        System.out.println("정수1 입력");
+        int j1 = scanner.nextInt();
+
+        System.out.println("정수2 입력");
+        int j2 = scanner.nextInt(); 
+
+        System.out.println("정수3 입력");
+        int j3 = scanner.nextInt();
+
+        if (j1 < j2) { int j0 = 0; j0 = j1; j1 = j2; j2 = j0;}
+        if (j1 < j3) { int j0 = 0; j0 = j1; j1 = j3; j3 = j0;}
+
+        System.out.println(j1);
 
 
 
@@ -437,6 +456,12 @@ public class JAVA_practice4 {
         System.out.println("p2 의 0(가위), 1(바위), 2(보) 입력: ");
         int p2 = scanner.nextInt();
 
+
+        if (p1 - p2 == 0) {System.out.println("무승부입니다.");}
+        else if (p1 - p2 == -1 || p1 - p2 == 2) {System.out.println("플레이어2 승리");}
+        else { System.out.println("플레이어1 승리");}
+
+
         /*
         p1 - p2 = 0  무승부
         p1 - p2 = -1 or 2 패배
@@ -444,9 +469,5 @@ public class JAVA_practice4 {
         */
         
         
-
-
-
-
     }
 }
