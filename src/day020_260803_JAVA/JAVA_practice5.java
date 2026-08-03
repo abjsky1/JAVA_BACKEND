@@ -343,17 +343,19 @@ public class JAVA_practice5 {
 
         프로그램을 종료합니다. */
 
+        int 초기잔고 = 0;
 
+        for(;;){
+            System.out.println("\n1:입금 | 2:출금 | 3:잔고 | 4:종료");
+            int ch = scan.nextInt();
 
+            if(ch == 1){ System.out.println("입금액 입력"); int money = scan.nextInt(); 초기잔고 += money;}
+            else if(ch == 2){ System.out.println("출금액 입력"); int money = scan.nextInt(); if(money > 초기잔고){ System.out.println("잔액부족");}else{초기잔고 -= money;}}
+            else if(ch == 3){ System.out.println("잔고: "+초기잔고);}
+            else if(ch == 4){ System.out.println("프로그램 종료"); break;}
+            else{ System.out.println("다시 입력해 주세요.");}
 
-
-
-
-
-
-
-
-
+        }
 
 
 
