@@ -90,7 +90,7 @@ public class JAVA_exam1 {
         while ( true ) { System.out.println("무한반복"); break;}
     
 
-        // 초기값 ; while ( 조건문 ){ 증감식; 실행문; }
+        // 초기값 ; while ( 조건문 ){ 실행문; 증감식; }
         int i = 1;
         while (i <= 10) { 
             System.out.println(i);
