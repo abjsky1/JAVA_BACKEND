@@ -33,3 +33,9 @@ DROP DATABASE IF EXISTS mydb260804;
 
 -- [5] 데이터베이스 활성화  :  연결된 DB 서버 안에 여러개 DB 중 조작할 DB 선택
 USE mydb260804;
+
+
+-- [활용]  :  프로젝트 데이터베이스 생성
+DROP DATABASE if EXISTS testdb260804;
+CREATE DATABASE testdb260804;
+USE testdb260804;
