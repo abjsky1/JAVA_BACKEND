@@ -5,98 +5,78 @@ public class JAVA_practice8 {
     public static void main(String[] args) {
         
 
-        /*[문제 1] Printer 클래스를 만드세요.
+        /*[문제 1] Book 클래스 (매개변수 생성자 기본)
+        Book 클래스를 정의하세요. (멤버 변수: title, author, price)
+        멤버 변수의 타입은 적절하게 선택하시오.
+        title, author, price를 매개변수로 받아 멤버 변수를 초기화하는 생성자를 정의하세요.
+        main 함수에서 해당 생성자를 이용하여 다음 두 객체를 생성하고, 각 객체의 필드 값을 출력하세요.
+        ("이것이 자바다", "신용권", 30000)
+        ("자바의 정석", "남궁성", 28000)*/
 
-        1. "안녕하세요, 메소드입니다."라고 출력하는 printMessage 메소드를 정의하세요. (매개변수 X, 반환값 X)
-            
-        2. main 함수에서 Printer 객체를 생성하고, printMessage 메소드를 호출하세요.*/
-            
-            
-        /*[문제 2] Greeter 클래스를 만드세요.
-            
-        1. 문자열(이름) 하나를 매개변수로 받아, "안녕하세요, [이름]님!"이라고 출력하는 greet 메소드를 정의하세요.
-        (매개변수 O, 반환값 X)
-            
-        2. main 함수에서 Greeter 객체를 생성하고, 자신의 이름을 인자로 전달하여 greet 메소드를 호출하세요.*/
-            
-            
-        /*[문제 3] SimpleCalculator 클래스를 만드세요.
-            
-        1. 정수 두 개를 매개변수로 받아, 두 수의 합을 반환하는 add 메소드를 정의하세요. (매개변수 O, 반환값 O)
-            
-        2. main 함수에서 SimpleCalculator 객체를 생성하고, add 메소드를 호출하여 반환된 결과를 변수에 저장한 뒤,
-        그 변수를 출력하세요.*/
-            
-            
-        /*[문제 4] Checker 클래스를 만드세요.
-            
-        1. 정수 하나를 매개변수로 받아, 그 수가 짝수이면 true, 홀수이면 false를 반환하는 isEven 메소드를 정의하세
-        요.
-            
-        2. main 함수에서 isEven 메소드를 호출하고, 반환된 값에 따라 "짝수입니다." 또는 "홀수입니다."를 출력하세
-        요.*/
-            
-            
-        /*[문제 5] Lamp 클래스를 만드세요. isOn (boolean) 멤버 변수를 가집니다.
-            
-        1. turnOn 메소드를 호출하면 isOn이 true가 되고, turnOff 메소드를 호출하면 false가 되도록 두 메소드를 정
-        의하세요.
-            
-        2. main 함수에서 Lamp 객체를 생성하고, turnOn과 turnOff를 차례로 호출하며 각 단계에서 램프의 상태
-        (isOn 값)를 출력하여 확인하세요.*/
-            
-            
-        /*[문제 6] Product 클래스를 만드세요. name(문자열)과 stock(정수) 멤버 변수를 가집니다.
-            
-        1. Product 클래스 안에, 구매 수량을 매개변수로 받아 재고를 차감하는 sell 메소드를 정의하세요. 이 메소드는 재고
-        가 충분하면 재고를 줄이고 true를, 부족하면 "재고 부족" 메시지를 출력하고 false를 반환합니다.
-            
-        2. main 함수에서 Product 객체를 생성하고 초기 재고를 10으로 설정한 뒤, sell 메소드를 호출하여 구매를 시도하고
-        결과를 확인하세요.*/
-            
-            
-        /*[문제 7] Visualizer 클래스를 만드세요.
-            
-        1. 정수 하나를 매개변수로 받아, 그 숫자만큼 "★" 문자를 반복하여 하나의 문자열로 만들어 반환하는 getStars 메소
-        드를 정의하세요.
-            
-        2. main 함수에서 getStars(5)를 호출하여 반환된 문자열 "★★★★★"를 출력하세요.*/
-            
-            
-        /*[문제 8] ParkingLot 클래스를 만드세요.
-            
-        1. 주차 시간(분)을 매개변수로 받아, 요금 규정에 따라 계산된 최종 주차 요금을 반환하는 calculateFee 메소드를 정
-        의하세요.
-            
-        2. 요금 규정:
-            
-        기본 요금: 최초 30분까지 1,000원
-            
-        추가 요금: 30분 초과 시, 매 10분마다 500원씩 추가
-            
-        일일 최대 요금: 20,000원
-            
-        3. main 함수에서 calculateFee 메소드에 65, 140을 각각 인자로 전달하여 반환된 요금을 출력하세요.*/
-            
+        Book book1 = new Book("이것이 자바다", "신용권", 30000);
+        Book book2 = new Book("자바의 정석", "남궁성", 28000);
+
+        System.out.printf("\n%s %s %d", book1.title, book1.author, book1.price);
+        System.out.printf("\n%s %s %d", book2.title, book2.author, book2.price);
+
+
+
+        /*[문제 2] Rectangle 클래스 (매개변수 생성자를 통한 객체 초기화)
+        Rectangle 클래스를 정의하세요. (멤버 변수: width, height)
+        멤버 변수의 타입은 적절하게 선택하시오.
+        width와 height를 매개변수로 받아 초기화하는 생성자를 정의하세요.
+        main 함수에서 (10, 5) 값을 매개변수로 전달하여 Rectangle 객체를 생성하세요.
+        생성된 객체의 width와 height 값을 각각 출력하세요.*/
+
+        Rectangle rec1 = new Rectangle(10, 5);
+
+        System.out.printf("\n%d %d", rec1.height, rec1.width);
+
+
+
+        /*[문제 3] BankAccount 클래스 (다양한 데이터 타입을 가진 생성자)
+        BankAccount 클래스를 정의하세요. (멤버 변수: accountNumber, ownerName, balance)
+        멤버 변수의 타입은 적절하게 선택하시오.
+        세 멤버 변수(accountNumber, ownerName, balance)를 모두 전달받아 초기화하는 생성자를 정의하세요.
+        main 함수에서 ("111-222-3333", "유재석", 10000) 정보로 BankAccount 객체를 생성하세요.
+        객체 생성 후, 해당 객체의 계좌번호, 예금주명, 잔액 정보를 출력하여 올바르게 초기화되었는지 확인하세요.*/
+
+        BackAccount bank1 = new BackAccount("111-222-3333", "김길리", 10000);
+
+        System.out.printf("\n%s %s %d", bank1.accountNumber, bank1.ownerName, bank1.balance);
 
 
 
 
+        /*[문제 4] Goods 클래스 (생성자 오버로딩)
+        Goods 클래스를 정의하세요. (멤버 변수: name, price)
+        멤버 변수의 타입은 적절하게 선택하시오.
+        Goods 클래스에 생성자 오버로딩을 적용하여 두 개의 생성자를 정의하세요.
+        기본 생성자: name은 "미정", price는 0으로 초기화
+        매개변수 생성자: name과 price를 전달받아 초기화
+        main 함수에서 다음 두 객체를 각각 생성하고, 두 객체의 멤버 변수 정보를 출력하세요.
+        기본 생성자로 생성한 객체
+        매개변수 생성자를 통해 ("콜라", 2000) 정보로 생성한 객체*/
+
+        Goods g1 = new Goods();
+
+        System.out.printf("\n%s - %d", g1.name, g1.price);
+
+        Goods g2 = new Goods("콜라", 2000);
+
+        System.out.printf("\n%s - %d", g2.name, g2.price);
 
 
 
+        /*[문제 5] Member 클래스 (기본 생성자 및 초기값 설정)
+        Member 클래스를 정의하세요. (멤버 변수: id, isLogin)
+        멤버 변수의 타입은 적절하게 선택하시오.
+        Member 클래스에 기본 생성자를 만들고, 생성자 내부에서 id는 "guest", isLogin은 false로 초기화되도록 구현하세요.
+        main 함수에서 new Member()로 객체를 생성한 뒤, 초기화된 id와 isLogin 값을 출력하여 확인하세요.*/
 
+        Member m1 = new Member();
 
-
-
-
-
-
-
-
-
-
-
+        System.out.printf("\n%s %b", m1.id, m1.isLogin);
 
 
 
@@ -107,5 +87,65 @@ public class JAVA_practice8 {
 
 
     }
+}
+
+
+
+
+class Book{
+    String title;
+    String author;
+    int price;
+
+    Book(String title , String author , int price){
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
+}
+
+class Rectangle{
+    int width;
+    int height;
+
+    Rectangle(int width, int height){
+        this.width = width;
+        this.height= height;
+    }
+}
+
+class BackAccount{
+    String accountNumber;
+    String ownerName;
+    int balance;
+
+    BackAccount(String accountNumber, String ownerName, int balance){
+        this.accountNumber = accountNumber;
+        this.ownerName = ownerName;
+        this.balance = balance;
+    }
+}
+
+class Goods{
+    String name;
+    int price = 0;
+
+    Goods(){}
+
+    Goods( String name , int price ){
+        this.price = price;
+        this.name = name;
+    }
+}
+
+class Member{
+    String id;
+    boolean isLogin;
+
+    Member(){
+        this.id = "guest";
+        this.isLogin = false;
+    }
+
 
 }
