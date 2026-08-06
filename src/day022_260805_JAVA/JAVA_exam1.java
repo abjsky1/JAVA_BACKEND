@@ -94,7 +94,9 @@ class Phone{
     }
 
     // 3. 메소드/함수
-
+    public void name() {
+        
+    }
 }
 
 

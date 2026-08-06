@@ -11,6 +11,12 @@ public class JAVA_practice9 {
             
         2. main 함수에서 Printer 객체를 생성하고, printMessage 메소드를 호출하세요.*/
             
+        Printer p1 = new Printer();
+
+        System.out.println(p1);
+
+
+
             
         /*[문제 2] Greeter 클래스를 만드세요.
             
@@ -87,25 +93,18 @@ public class JAVA_practice9 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
+
+}
+
+
+
+
+class Printer{
+    
+    void printMassage(){
+        System.out.println("안녕하세요, 메소드입니다.");
+    }
+
 
 }
