@@ -101,7 +101,7 @@ CREATE Table test2(
 CREATE Table test3(
     필드명1 TINYINT NOT NULL,           -- 해당 필드/속성 에는 null 을 저장할 수 없도록 설정. 값이 null 이면 오류 발생
     필드명2 SMALLINT UNIQUE,            -- 해당 필드/속성 에는 중복값을 저장할 수 없도록 설정. 값이 다른 레코드와 같다면 오류 발생
-    필드명3 INT DEFAULT 100,            -- 해당 필드/속성 에 레코드(행) 추가시 기본값이 10 대입됨.
+    필드명3 INT DEFAULT 10,            -- 해당 필드/속성 에 레코드(행) 추가시 기본값이 10 대입됨.
     필드명4 DATETIME DEFAULT now(),     -- 예) 레코드 삽입시 (DB시점으로)현재 날짜/시간/now() 자동 대입됨.BIGINT
     필드명5 BIGINT AUTO_INCREMENT,      -- AUTO_INCREMENT : 해당 필드/속성 에 레코드(행) 추가시 자동으로 순서 번호가 할당됨. 1, 2, 3, 4, 5, ...
     CONSTRAINT PRIMARY KEY( 필드명5 )   -- 특정 필드/속성 을 PK 로 설정함.
