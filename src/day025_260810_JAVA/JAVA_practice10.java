@@ -138,12 +138,19 @@ public class JAVA_practice10 {
         3. 계좌번호를 외부에서 읽을 수만 있도록 public 접근 제한자를 가진 getAccountNumber() 메소드(Getter)만 정의하세요. (Setter는 만들지 않습니다.)
         4. main 함수에서 "123-456"을 계좌번호로 가진 객체를 생성하고, getAccountNumber()로 계좌번호를 출력하여 확인하세요.*/
 
+        BankAccount an = new BankAccount("123-456");
+
+        System.out.println(an.getAccountNumber());
 
 
         /*[문제 4] CircleCalculator 클래스를 만드세요.
         1. 이 클래스 안에, 원주율(PI)을 저장할 final double PI = 3.14159; 상수를 선언하세요.
         2. 반지름(정수)을 매개변수로 받아, 원의 넓이(반지름  반지름  PI)를 계산하여 출력하는 printCircleArea 메소드를 정의하세요.
         3. main 함수에서 CircleCalculator 객체를 생성하고, 반지름이 5인 원의 넓이를 출력하세요.*/
+
+        CircleCalculator cc = new CircleCalculator();
+
+        System.out.println(cc.printCircleArea(5));
 
 
 
@@ -226,8 +233,56 @@ class BankAccount {
         this.accountNumber = accountNumber;
     }
 
-    // 3. Getter
+    // 3. Getter 정의
     public String getAccountNumber() {
-        return accountNumber;
+        return this.accountNumber;
     }
+
 }
+
+    /*[문제 4] CircleCalculator 클래스를 만드세요.
+        1. 이 클래스 안에, 원주율(PI)을 저장할 final double PI = 3.14159; 상수를 선언하세요.
+        2. 반지름(정수)을 매개변수로 받아, 원의 넓이(반지름  반지름  PI)를 계산하여 출력하는 printCircleArea 메소드를 정의하세요.*/
+
+class CircleCalculator{
+
+    final double PI = 3.14159;
+
+    double printCircleArea(int a){
+        
+        double extent = a * a * PI;
+
+        return extent;
+    }
+
+}
+
+/* [문제 5] TicketMachine 클래스를 만드세요.
+    1. 이 클래스 안에, 발권된 총 티켓 수를 저장할 static int totalTickets = 0; 정적 변수를 선언하세요.
+    2. 티켓을 한 장 발권하는 issueTicket() 인스턴스 메소드를 만드세요. 이 메소드는 호출될 때마다 totalTickets를 1씩 증가시키고, "티켓 1장을 발권했습니다."라고 출력합니다.
+    3. 현재까지 발권된 총 티켓 수를 출력하는 static void printTotalTickets() 정적 메소드를 만드세요.*/
+
+class TicketMachine{
+
+    // static 정적 변수 선언  =  Controller 객체마다 따로 갖는 게 아니라, Controller 클래스가 하나 가지고 있게 하겠다
+    static int totalTickets = 0;
+
+    void issueTicket(){
+        this.totalTickets =+ 1;
+        System.out.println("티켓 1장을 발권했습니다.");
+    }
+
+    static void printTotalTickets(){
+        System.out.println("현재까지 발권된 총 티켓 수 : " + totalTickets);
+    }
+
+}
+
+
+
+
+
+
+
+
+

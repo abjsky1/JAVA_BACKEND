@@ -164,11 +164,19 @@ public class JAVA_exam1 {
         Book b2 = new Book(); b2.title = "t2"; b2.author = "n2";
         Book b3 = new Book(); b3.title = "t3"; b3.author = "n3";
 
+        library.add(new Book("책이름1", "저자1"));
+        library.add(new Book("책이름2", "저자2"));
+        library.add(new Book("책이름3", "저자3"));
+
         library.add(b1); library.add(b2); library.add(b3);
 
         for(int i = 0 ; i <= library.size()-1 ; i++){
             System.out.print(library.get(i).title);
             System.out.println(library.get(i).author);
+        }
+
+        for(Book bb : library){
+            System.out.println(bb.title + bb.author);
         }
         
 
@@ -223,5 +231,29 @@ public class JAVA_exam1 {
 class Book{
     String title;
     String author;
+    
+    public Book(){};
+    
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    
 }
