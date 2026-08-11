@@ -1,4 +1,7 @@
 -- 아래 문제는 'practice2' 데이터베이스 생성 후 진행 합니다.
+DROP DATABASE IF EXISTS practice2;
+CREATE DATABASE practice2;
+USE practice2;
 
 -- [문제 1]아래 조건에 맞는 members 테이블을 생성하는 SQL을 작성하세요.
 
@@ -16,6 +19,14 @@
 
 -- is_active (활성여부): 논리형(bool), Default true
 
+CREATE TABLE members(
+    member_id int AUTO_INCREMENT, 
+    CONSTRAINT PRIMARY KEY(member_id),
+    member_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    join_date DATETIME DEFAULT now(),
+    is_active BOOLEAN DEFAULT TRUE
+    )
 
 
 -- [문제 2]
@@ -36,6 +47,14 @@
 
 -- created_at (등록일): 날짜/시간, Default 현재 날짜/시간
 
+CREATE TABLE products(
+    product_id int AUTO_INCREMENT, 
+    CONSTRAINT PRIMARY KEY(product_id),
+    product_name VARCHAR(100) NOT NULL,
+    price INT UNSIGNED NOT NULL,
+    stock INT DEFAULT 0 NOT NULL,
+    created_at DATETIME DEFAULT now()
+    )
 
 
 -- [문제 3]
@@ -54,6 +73,14 @@
 
 -- total_price (총금액): int unsigned, NULL 허용 안함
 
+CREATE Table orders(
+    order_id BIGINT AUTO_INCREMENT,
+    CONSTRAINT PRIMARY KEY(order_id),
+    member_id INT,
+    CONSTRAINT FOREIGN KEY(member_id) REFERENCES members(member_id),
+    order_date DATETIME DEFAULT now(),
+    total_price INT UNSIGNED NOT NULL
+)
 
 
 -- [문제 4]
@@ -74,6 +101,16 @@
 
 -- price (단가): int unsigned, NULL 허용 안함
 
+CREATE Table order_items(
+    item_id INT AUTO_INCREMENT,
+    CONSTRAINT PRIMARY KEY(item_id),
+    order_id BIGINT,
+    CONSTRAINT FOREIGN KEY(order_id) REFERENCES orders(order_id),
+    product_id INT,
+    CONSTRAINT FOREIGN KEY(product_id) REFERENCES products(product_id),
+    quantity INT DEFAULT 1,
+    price INT UNSIGNED NOT NULL
+)
 
 
 -- [문제 5]
@@ -93,6 +130,15 @@
 -- grade (학년): tinyint unsigned
 
 -- enrolled_date (입학일): date
+
+CREATE Table students(
+    student_id VARCHAR(10),
+    CONSTRAINT PRIMARY KEY(student_id),
+    student_name VARCHAR(30) NOT NULL,
+    major VARCHAR(50),
+    grade TINYINT UNSIGNED,
+    enrolled_date DATE
+)
 
 
 
@@ -114,6 +160,14 @@
 
 -- department (부서): varchar(50)
 
+CREATE Table employees(
+    emp_id INT AUTO_INCREMENT,
+    CONSTRAINT PRIMARY KEY(emp_id),
+    emp_name VARCHAR(40) NOT NULL,
+    salary int UNSIGNED NOT NULL,
+    hire_date DATE NOT NULL,
+    department VARCHAR(50)
+)
 
 
 -- [문제 7]
@@ -134,6 +188,15 @@
 
 -- created_at (작성일): datetime, Default 현재 날짜/시간
 
+CREATE Table boards(
+    board_id INT AUTO_INCREMENT,
+    CONSTRAINT PRIMARY KEY(board_id),
+    title VARCHAR(200) NOT NULL,
+    content TEXT NOT NULL,
+    writer_id INT,
+    CONSTRAINT Foreign Key (writer_id) REFERENCES members(member_id),
+    created_at DATETIME DEFAULT now()
+)
 
 
 -- [문제 8]
@@ -154,6 +217,16 @@
 
 -- created_at (작성일): datetime, Default 현재 날짜/시간
 
+CREATE Table comments(
+    comment_id INT AUTO_INCREMENT,
+    CONSTRAINT PRIMARY KEY(comment_id),
+    board_id INT,
+    CONSTRAINT FOREIGN KEY(board_id) REFERENCES boards(board_id),
+    writer_id INT,
+    CONSTRAINT FOREIGN KEY(writer_id) REFERENCES members(member_id),
+    content VARCHAR(300) NOT NULL,
+    created_at DATETIME DEFAULT now()
+)
 
 
 -- [문제 9]
