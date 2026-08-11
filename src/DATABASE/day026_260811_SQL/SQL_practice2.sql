@@ -247,6 +247,15 @@ CREATE Table comments(
 
 -- payment_date (결제일): datetime, Default 현재 날짜/시간
 
+CREATE Table payments(
+    payment_id BIGINT AUTO_INCREMENT,
+    CONSTRAINT PRIMARY KEY(payment_id),
+    order_id BIGINT, 
+    CONSTRAINT FOREIGN KEY(order_id) REFERENCES orders(order_id),
+    payment_amount INT UNSIGNED NOT NULL,
+    payment_method VARCHAR(30),
+    payment_date DATETIME DEFAULT now()
+)
 
 
 -- [문제 10]
@@ -268,3 +277,15 @@ CREATE Table comments(
 -- review_text (리뷰내용): text
 
 -- created_at (작성일): datetime, Default 현재 날짜/시간
+
+CREATE Table reviews(
+    review_id INT AUTO_INCREMENT,
+    CONSTRAINT PRIMARY KEY(review_id),
+    product_id INT,
+    CONSTRAINT FOREIGN KEY(product_id) REFERENCES products(product_id),
+    member_id INT,
+    CONSTRAINT FOREIGN KEY(member_id) REFERENCES members(member_id),
+    rating TINYINT UNSIGNED NOT NULL,
+    review_text TEXT,
+    created_at DATETIME DEFAULT now()
+)
