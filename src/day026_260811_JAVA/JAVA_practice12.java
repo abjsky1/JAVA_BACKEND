@@ -132,7 +132,20 @@ public class JAVA_practice12 {
 
         //
 
+        /*
+        class SuperClass{
+            String name = "상위";
+            void method(){System.out.println("상위 메소드 출력");}
+        }
 
+        class SubClass extends SuperClass{
+            String name = "하위";
+            void method(){System.out.println("하위 메소드 출력");}
+        }
+        */
+
+
+        
         /*[문제 10] 다중 상속 관계
         1. Device 클래스를 만드세요.
         2. Device를 상속받는 Electronic 클래스를 만드세요.
