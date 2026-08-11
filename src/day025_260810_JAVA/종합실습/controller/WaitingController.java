@@ -13,7 +13,7 @@ public class WaitingController {
     public static WaitingController getInstance(){return instance;}
 
     // CONTROLLER 에서 DAO 호출
-    // MVC패턴 흐름의 CONTROLLER 싱글톤 호출
+    // MVC패턴 흐름의 DAO 싱글톤 호출
     private WaitingDao wd = WaitingDao.getInstance();
 
     // 대기명단 등록 컨트롤러

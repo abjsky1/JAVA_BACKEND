@@ -10,4 +10,5 @@ public class AppStart {
         WaitingView.getInstance().run();
 
     }
+    
 }
