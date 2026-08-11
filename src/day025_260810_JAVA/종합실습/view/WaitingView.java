@@ -19,6 +19,7 @@ public class WaitingView {
 
     private Scanner scan = new Scanner(System.in);  // 모든 메소드에서 사용 가능한 입력객체
 
+    // 교수님 피드백  ==>  PK 를 DAO 에서 처리하는 방향으로 설계하면 좋을 듯
     int no = 1;
 
     public void save(){
