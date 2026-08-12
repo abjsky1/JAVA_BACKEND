@@ -7,17 +7,28 @@ import 종합예제.model.dao.IBaseDao;
 import 종합예제.model.dto.BoardDto;
 
 public class BoardController {
-    private BoardController() {}
+    private BoardController() {
+    }
+
     private static final BoardController instance = new BoardController();
-    public static BoardController getInstance() { return instance; }
+
+    public static BoardController getInstance() {
+        return instance;
+    }
 
     private IBaseDao ib = BoardDao.getInstance();
 
     public boolean save(BoardDto boardDto) {
-        // TODO 1: boardDto 전달받아 DAO의 save()를 호출하고 결과 반환
+        return ib.save(boardDto);
     }
 
     public ArrayList<BoardDto> findAll() {
-        // TODO 2: DAO의 findAll() 호출하여 결과 반환
+        ArrayList<Object> b1 = ib.findAll();
+        ArrayList<BoardDto> result = new ArrayList<>();
+        for (Object b2 : b1) {
+            result.add((BoardDto) b2);
+        }
+        return result;
+        // 받야할게 BoardDto OBJECT
     }
 }
