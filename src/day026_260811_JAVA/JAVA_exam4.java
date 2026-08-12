@@ -7,6 +7,11 @@ public class JAVA_exam4 {
         // [01] Car 라는 타입의 myCar 라는 변수로 인스턴스 생성
         Car myCar = new Car();  
 
+            // [01-1] 주소값 체크
+            System.out.println(myCar);  // @2f92e0f4
+            Car yourCar = new Car();
+            System.out.println(yourCar);  // @28a418fc
+
         // [02] myCar 라는 변수의 tire 라는 속성값에 인스턴스 생성
         myCar.tire = new Tire(); 
 
@@ -43,6 +48,21 @@ public class JAVA_exam4 {
         System.out.println( myCar.tire instanceof HankookTire ); // false
 
 
+        // 필드는 상태, 메소드는 행위
+        // 상속의 다형성 : 호환(타입의 변환 IOT AX) , 확장 , 오버라이딩
+        
+        Tire aa = new KumhoTire();
+
+        // KumhoTire kk = new Tire();
+
+        // HankookTire hh = new Car();
+
+        // HankookTire nn = aa;
+
+        // KumhoTire uu = aa;
+
+        // Car cc = aa;
+
     }
 }
 
@@ -52,9 +72,7 @@ class Car{ // 자동차
  void run() { this.tire.roll(); }
 }
 class Tire{ // 타이어
- void roll(){
- System.out.println("[일반] 타이어가 회전");
- }
+ void roll(){ System.out.println("[일반] 타이어가 회전"); }
 }
 class HankookTire extends Tire{
  void roll(){ System.out.println("[한국] 타이어가 회전(업그레이드)"); }

@@ -126,14 +126,15 @@ public class JAVA_practice12 {
         2. SuperClass를 상속받고, String name = "하위"; 필드와 method() 메소드("하위 메소드" 출력)를 가진 SubClass를 만드세요.
         3. SuperClass obj = new SubClass(); 로 객체를 생성한 뒤, obj.name과 obj.method()를 각각 호출했을 때의 결과를 확인하고, 왜 다른 결과가 나오는지 주석으로 설명하세요.*/
 
-        SuperClass obj = new SubClass();  
-        System.out.println(obj.name);   // 상위
-        obj.method();  // 하위 메소드 출력
+        SuperClass obj = new SubClass();   // 업캐스팅(자동타입변환)
+        System.out.println(obj.name);   // 상위   -   멤버변수는 오버라이딩 아님.
+        obj.method();  // 하위 메소드 출력   -   메소드는 오버라이딩 됨.
 
         // 1. SuperClass 타입인 obj 변수에 SubClass 객체 생성
         // 2. obj.name 은 
         // 3. obj.method() 는 
 
+        // 멤버변수는 각각 갖고, 메소드는 공유한다.
         
         // 필드는 오버라이딩되지 않고, 메소드는 오버라이딩된다
 
