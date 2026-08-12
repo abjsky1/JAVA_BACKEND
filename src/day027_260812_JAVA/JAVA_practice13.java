@@ -14,7 +14,12 @@ public class JAVA_practice13 {
 
         4. main 함수에서 Cat 객체와 Dog 객체를 생성하고, 각 객체의 makeSound() 메소드를 호출하여 결과를 확인하세요.*/
 
-        
+        Cat cat = new Cat();
+        Dog dog = new Dog();
+
+        cat.makeSound();  // 야옹 야옹
+        dog.makeSound();  // 멍멍 멍멍
+
 
 
         /*[문제 2] 인터페이스 상수
@@ -27,6 +32,9 @@ public class JAVA_practice13 {
         3. main 함수에서 객체를 생성하지 않고, RemoteControl.MAX_VOLUME과 같이 인터페이스 이름으로 직접 접근하여 두 상수
         를 출력하세요.*/
 
+        System.out.println(RemoteControl.MAX_VOLUME);
+        System.out.println(RemoteControl.MIN_VOLUME);
+
 
         /*[문제 3] 다형성을 활용한 매개변수
 
@@ -34,11 +42,15 @@ public class JAVA_practice13 {
 
         2. Attackable을 구현하는 Sword 클래스와 Gun 클래스를 만드세요.
 
-        3. Attackable 타입의 객체를 매개변수로 받아, 해당 객체의 attack() 메소드를 호출하는 Character 클래스와
+        3. Attackable 타입의 객체를 매개변수로 받아, 
+        해당 객체의 attack() 메소드를 호출하는 Character 클래스와
         useWeapon(Attackable weapon) 메소드를 만드세요.
 
         4. main 함수에서 Sword 객체와 Gun 객체를 생성한 뒤, 이 객체들을 Character의 useWeapon() 메소드에 인자로 전달하여
         동작을 확인하세요.*/
+
+
+
 
 
         /*[문제 4] 다중 인터페이스 구현
@@ -106,6 +118,52 @@ public class JAVA_practice13 {
 
 
 
+    }
+
+}
+
+
+
+interface Soundable{
+
+    void makeSound();
+
+}
+
+class Cat implements Soundable{
+    @Override
+    public void makeSound() {
+        System.out.println("야옹 야옹");
+    }
+}
+
+class Dog implements Soundable{
+    @Override
+    public void makeSound() {
+        System.out.println("멍멍 멍멍");
+    }
+}
+
+interface RemoteControl{
+    public static final int MAX_VOLUME = 10;  // 인터페이스에서 public static final 생략해도 기본값
+    public static final int MIN_VOLUME = 0;  // 인터페이스에서 public static final 생략해도 기본값
+}
+
+interface Attackable{
+    void attack();
+}
+
+class Sword{
+
+}
+
+class Gun{
+
+}
+
+class Character{ 
+    void useWeapon(Attackable attackable){
+        attackable.attack();
     }
 
 }
