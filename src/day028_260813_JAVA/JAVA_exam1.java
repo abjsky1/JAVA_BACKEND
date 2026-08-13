@@ -26,6 +26,8 @@ public class JAVA_exam1 {
 
             [4] finally : 예외 발생 여부와 상관 없이 무조건 실행 구역 , 외부 프로그램과 연동 종료
 
+            [5] 예외 던지기(떠넘기기) *예외반환* : 해당 메소드를 호출한 곳으로 예외 반환  
+
         */
 
         // 동적으로 존재하는 클래스 로드(읽어오기)
@@ -124,10 +126,31 @@ public class JAVA_exam1 {
         }catch( Exception e ){
             // 다중 catch 에서 마지막에 (상위)클래스 Exception 사용하여 그외 처리한다.
             System.out.println("알 수 없는 오류 발생" + e);
+        }finally{ System.out.println( "무조건 실행");}
+    
+    //   finally : 예외 발생 여부와 상관 없이 무조건 실행 구역
+        
+
+
+
+        try{
+        method1();  // 예외가 반환   빨간줄 O
+        }catch( Exception e){
+            System.out.println("메소드 예외발생" + e);
         }
 
-        
-    //  finally : 예외 발생 여부와 상관 없이 무조건 실행 구역
+        method2();
 
     }
+
+    // 예외 발생하면 발생한 곳에서 예외처리 하지 않고 반환
+    public static void method1() throws ClassNotFoundException {
+        Class.forName("java.lang.String");  // 예외발생?
+    }
+
+    public static void method2(){
+       // Class.forName("java.lang.String");  // 빨간줄 O
+    }
+
+
 }
