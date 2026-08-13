@@ -36,6 +36,7 @@ public class JAVA_practice13 {
         System.out.println(RemoteControl.MIN_VOLUME);
 
 
+
         /*[문제 3] 다형성을 활용한 매개변수
 
         1. "공격!"이라는 추상 메소드 attack()을 가진 Attackable 인터페이스를 정의하세요.
@@ -49,7 +50,12 @@ public class JAVA_practice13 {
         4. main 함수에서 Sword 객체와 Gun 객체를 생성한 뒤, 이 객체들을 Character의 useWeapon() 메소드에 인자로 전달하여
         동작을 확인하세요.*/
 
+        Sword sword = new Sword();
+        Gun gun = new Gun();
 
+        Character char1 = new Character();
+        char1.useWeapon(sword);
+        char1.useWeapon(gun);
 
 
 
@@ -64,6 +70,13 @@ public class JAVA_practice13 {
         4. main 함수에서 Duck 객체를 생성하고, fly()와 swim() 메소드를 모두 호출하여 결과를 확인하세요.*/
 
 
+        Duck duck = new Duck();
+
+        duck.fly();
+        duck.swim();
+
+
+
         /*[문제 5] instanceof와 인터페이스
 
         1. 문제 5에서 만든 Flyable, Swimmable 인터페이스와 Duck 클래스를 활용합니다.
@@ -73,6 +86,38 @@ public class JAVA_practice13 {
         3. if문과 instanceof 연산자를 사용하여, 해당 객체가 Flyable 타입인지, Swimmable 타입인지 각각 확인하고, 맞다면 해당 인
         터페이스 타입으로 강제 형변환하여 메소드를 호출하세요.*/
 
+        Object obj = new Duck();
+
+        if(obj instanceof Flyable){System.out.println("Flyable 타입 맞음");}
+        if(obj instanceof Swimmable){System.out.println("Swimmable 타입 맞음");}
+
+        // obj.fly();    error
+        // obj.swim();   error
+
+        Duck duck1 = (Duck)obj;
+
+        if(duck1 instanceof Flyable){System.out.println("Flyable 타입 맞음");}
+        if(duck1 instanceof Swimmable){System.out.println("Swimmable 타입 맞음");}
+        
+        duck1.fly();
+        duck1.swim();
+
+        Flyable duck2 = (Flyable)obj;
+
+        if(duck2 instanceof Flyable){System.out.println("Flyable 타입 맞음");}
+        if(duck2 instanceof Swimmable){System.out.println("Swimmable 타입 맞음");}
+        
+        duck2.fly();
+        // duck2.swim();   error
+
+        Swimmable duck3 = (Swimmable)obj;
+
+        if(duck3 instanceof Flyable){System.out.println("Flyable 타입 맞음");}
+        if(duck3 instanceof Swimmable){System.out.println("Swimmable 타입 맞음");}
+        
+        // duck3.fly();    error
+        duck3.swim();
+        
 
         /*[문제 6] 인터페이스를 이용한 객체 교체
 
@@ -86,6 +131,18 @@ public class JAVA_practice13 {
         4. dao에 new OracleDao()를 대입하여 save()를 호출하고, 그 다음 new MySqlDao()를 대입하여 save()를 호출하여 DB가
         쉽게 교체되는 것을 확인하세요.*/
 
+        DataAccessObject dao;
+
+        dao = new OracleDao();
+
+        dao.save();
+
+        dao = new MySqlDao();
+
+        dao.save();
+
+
+
 
         /*[문제 7] 익명 구현 객체
 
@@ -95,6 +152,12 @@ public class JAVA_practice13 {
         welcome() 메소드를 즉석에서 구현하고 호출하세요.
 
         예] Greeting g = new Greeting() { ... }; */
+
+        Greeting greeting = new Greeting() {
+            public void welcome(){System.out.println("환영합니다.");}
+        };
+
+        greeting.welcome();
 
 
         /*[문제 8] 디폴트 메소드 (Default Method)
@@ -107,6 +170,14 @@ public class JAVA_practice13 {
         3.main 함수에서 Television 객체를 생성하고, turnOn(), turnOff()와 함께 디폴트 메소드인 setMute()도 호출되는 것을 확
         인하세요 */
 
+        Television tv = new Television();
+
+        tv.trunOn();
+        tv.turnOff();
+        tv.setMute(true);
+        tv.setMute(false);
+
+
 
         /*[문제 9] 정적 메소드 (Static Method)
 
@@ -115,18 +186,24 @@ public class JAVA_practice13 {
         2. main 함수에서 Calculator 인터페이스를 구현하는 클래스나 객체를 만들지 않고, Calculator.plus(10, 20)과 같이 인터페이
         스 이름으로 직접 정적 메소드를 호출하여 결과를 출력하세요. */
 
+        int a = Calculator.plus(10, 20);
 
-
+        System.out.println(a);
 
     }
 
 }
 
+interface Calculator{
+    public static int plus(int x, int y){ return x+y;}
+}
+
+
 
 
 interface Soundable{
 
-    void makeSound();
+    public abstract void makeSound();
 
 }
 
@@ -153,17 +230,67 @@ interface Attackable{
     void attack();
 }
 
-class Sword{
-
+class Sword implements Attackable{
+    public void attack(){System.out.println("검으로 공격!");}
 }
 
-class Gun{
-
+class Gun implements Attackable{
+    public void attack(){System.out.println("총으로 공격!");}
 }
 
 class Character{ 
     void useWeapon(Attackable attackable){
         attackable.attack();
     }
+}
 
+interface Flyable{
+    public abstract void fly();
+}
+
+interface Swimmable{
+    public abstract void swim();
+}
+
+class Duck implements Flyable, Swimmable{
+    public void fly(){System.out.println("난다");}
+    public void swim(){System.out.println("헤엄");}
+}
+
+interface Greeting{ public abstract void welcome(); }
+
+interface DataAccessObject{
+    public abstract void save();
+}
+
+
+class OracleDao implements DataAccessObject{
+    @Override
+    public void save() {
+        System.out.println("Oracle DB에 저장");
+    }
+}
+
+class MySqlDao implements DataAccessObject{
+    @Override
+    public void save() {
+        System.out.println("MySQL DB에 저장");
+    }
+}
+
+interface Device{
+    public abstract void trunOn();
+    public abstract void turnOff();
+    public default void setMute(boolean mute){if(mute){System.out.println("무음 처리합니다.");}}
+}
+
+class Television implements Device{
+    @Override
+    public void trunOn() {
+        System.out.println("전원 켜기");
+    }
+    @Override
+    public void turnOff() {
+        System.out.println("전원 끄기");
+    }
 }
