@@ -19,6 +19,7 @@ public class MainView {
 
     public void run() {
         while (true) {
+
             System.out.println("\n========== 메인 메뉴 ==========");
             System.out.print("1.게시물 관리 2.제품 관리 3.종료: ");
             String ch = scan.next();
@@ -31,11 +32,14 @@ public class MainView {
             } else {
                 System.out.println("잘못된 입력입니다.");
             }
+
         }
     }
 
     // --- 게시물 메뉴 ---
     private void boardMenu() {
+
+
         while (true) {
             System.out.println("\n--- [게시물 관리] ---");
             System.out.print("1.등록 2.전체조회 3.이전메뉴: ");
@@ -46,6 +50,8 @@ public class MainView {
             else if (ch.equals("3")) { break; }
             else { System.out.println("잘못된 입력입니다."); }
         }
+
+
     }
 
     private void saveBoard() {
