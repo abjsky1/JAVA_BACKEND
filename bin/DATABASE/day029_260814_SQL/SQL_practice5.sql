@@ -106,3 +106,6 @@ SELECT pcategory.카테고리명, SUM(stock.재고수량) FROM product INNER JOI
 -- [문제 9] 각 제품별로 총 재고 수량을 조회하고, 총 재고 수량이 많은 순서대로 정렬하여 제품명과 총재고수량을 표시하세요. (조회결과: 6개 레코드)
 -- error : SELECT products.제품명, sum(stock.재고수량) FROM product INNER JOIN stoct ON product.제품번호_pk = stock.제품번호_fk GROUP BY product.제품명 ORDER BY sum(stock.재고수량) DESC;
 SELECT product.제품명, sum(stock.재고수량) FROM product INNER JOIN stock ON product.제품번호_pk = stock.제품번호_fk GROUP BY product.제품명 ORDER BY sum(stock.재고수량) DESC;
+
+
+-- VScode 에서 DB 작업을 할 때, 빨간줄이 안 생김. 따라서 오류가 생기면 오류메세지를 볼 것 !! 
