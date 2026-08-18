@@ -1,5 +1,7 @@
 package day030_260818_JAVA.종합예제_연습.model.dao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.ArrayList;
 
 public class BaseDao {

@@ -3,7 +3,7 @@ package day030_260818_JAVA.종합예제_연습.controller;
 import java.util.ArrayList;
 
 import day030_260818_JAVA.종합예제_연습.model.dao.Adao;
-import day030_260818_JAVA.종합예제_연습.model.dao.IBaseDao;
+import day030_260818_JAVA.종합예제_연습.model.dao.BaseDao;
 
 public class Acontroller {
 
@@ -24,7 +24,7 @@ public class Acontroller {
     public static Acontroller getInstance(){return instance;}
 
     // Controller 와 DAO 의 연결 
-    private IBaseDao ad = Adao.getInstance();
+    private BaseDao ad = Adao.getInstance();
 
     
 
