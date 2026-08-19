@@ -76,9 +76,9 @@ public class JAVA_exam2 {
 
 //          6. 날짜 계산 , 날짜/시각객체.plusXXX()
 
-            LocalDateTime result1 = localDateTime2.plusDays(20);
+            LocalDateTime result1 = localDateTime2.plusDays(20); // for 1~36500
             System.out.println(result1);
-            LocalDateTime result2 = localDateTime2.minusDays(20);
+            LocalDateTime result2 = localDateTime2.minusDays(20);  // 입차 2000.01.01 10:00  // 출차 2000.01.03 14:30
             System.out.println(result2);
 
 //          7. 특정한 날짜/시간 추출 , .getXXX()
@@ -93,6 +93,10 @@ public class JAVA_exam2 {
             System.out.println(localDateTime2.getSecond());
 
 //  
+            LocalDateTime 입차 = LocalDateTime.of(2000,01,01,01,01);
+            LocalDateTime 출차 = LocalDateTime.of(2000,01,01,03,04);
+
+           
 //  
 //  
 //  
