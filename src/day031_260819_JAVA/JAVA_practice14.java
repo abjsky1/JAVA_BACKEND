@@ -7,20 +7,26 @@ import java.util.Scanner;
 
 public class JAVA_practice14 {
 
+
+
     // Scanner 를 한번만 소환해서 쓸 수 없는가
 
+    // 스태틱보다 싱글톤을 호출 
+
+    static Scanner scan = new Scanner(System.in);
+     
 
     public static void main(String[] args) {
         
         String carParkingList = "3,211가6231,202608190930\n8,452하1234,202608171227";
             
-        Scanner scan = new Scanner(System.in);
+        
 
         while (true) {
             System.out.println("1.위치찾기 2.입차 3.출차 선택: 0.시스템종료");
             int ch = scan.nextInt();
             if( ch == 1 ){ findCarLocation(carParkingList); } // 위치찾기 구현 
-            if( ch == 2 ){ carParkingList = 입차처리(carParkingList); } // 입차 구현 
+            if( ch == 2 ){ carParkingList = new JAVA_practice14().입차처리(carParkingList); } // 입차 구현 
             if( ch == 3 ){ carParkingList = 출차처리(carParkingList); } // 출차 구현
             if( ch == 0 ){ break; } // 시스템 종료
         }
@@ -118,7 +124,7 @@ public class JAVA_practice14 {
     }
 
     // 반환타입을 String 으로 해서 return 해야 하는 이유 : 
-    static String 입차처리(String carParkingList){
+    String 입차처리(String carParkingList){
 
         Scanner scan = new Scanner(System.in);
 
