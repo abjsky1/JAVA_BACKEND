@@ -44,6 +44,122 @@ public class JAVA_exam3 {
             }
 
 
+    //  권장
+    //  [2] 멀티스레드 방법 1 : 익명구현체, new 인터페이스타입(){ 오버라이딩 };
+            
+    //      Runnable runnable = new Runnable(){ };
+
+            Runnable runnable = new Runnable(){ 
+
+    //          새로운 스레드가 처리할 메소드 = run()  오버라이딩(재정의)
+
+                @Override
+                public void run() {
+
+                    // TODO Auto-generated method stub
+                    for(int i = 1 ; i <= 5 ; i++){ 
+
+                        System.out.println("1번 새로운 스레드 : " + i ); 
+                    
+                        try{ Thread.sleep( 1000 ); /* 현재 스레드(코드 실행하는 흐름 단위) */ }
+                        catch( Exception e ){ System.out.println(e); }
+                    
+                    }
+                    
+                }
+
+            };  // 익명 구현체 구현 끝
+
+            Thread thread1 = new Thread( runnable );  // new Thread( 익명구현체 );
+            thread1.start();  // 새로운 스레드가 run() 메소드 호출 = start() , main / task1    (총 2개)
+
+
+    //  [3] 멀티스레드 방법 2 : 구현체
+
+    //      - runnable 에는 start() 가 없기 때문에 Thread 에 넣어서 진행  ==>  new Thread( 작업스레드2 );
+
+            작업스레드2 작업스레드2 = new 작업스레드2();
+            Thread thread2 = new Thread( 작업스레드2 );
+            thread2.start();  // main / task1 / task2    (총 3개)
+
+
+    //  [4] 멀티스레드 방법 3 : 상속
+
+            Thread thread3 = new 작업스레드3();
+            thread3.start();
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    //      
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    //   
+
+
 
     }
+
+}
+
+
+class 작업스레드2 implements Runnable{
+
+    @Override
+    public void run() {
+
+        for(int i = 1 ; i <= 5 ; i++){
+
+            System.out.println("2번 새로운 스레드 : " + i);
+
+            try{ Thread.sleep( 1000 ); /* 현재 스레드(코드 실행하는 흐름 단위) */ }
+            catch( Exception e ){ System.out.println(e); }
+
+        }
+
+    }
+
+}
+
+
+class 작업스레드3 extends Thread{
+
+    @Override
+    public void run() {
+        
+        for(int i = 1 ; i <= 5 ; i++){
+
+            System.out.println("3번 새로운 스레드 : " + i);
+
+            try{ Thread.sleep( 1000 ); /* 현재 스레드(코드 실행하는 흐름 단위) */ }
+            catch( Exception e ){ System.out.println(e); }
+
+        super.run();
+
+        }
+    
+    }
+
 }
