@@ -22,6 +22,40 @@ public class JAVA_exam3 {
         CPU 가 ( <--[운영체제]--> ) 프로세스 안에 스레드를 통해 코드를 순차적으로 처리함
 
         main 함수 : 스레드 환경 main 메소드가 제공한다.    JAVA-O , C-O , PYTHON-O , JS(html)-X  
+
+        멀티스레드 구현 : 
+
+            1. Runnable 익명구현체
+
+                - new Runnable(){ run(); };
+
+            2. Runnable 구현체  *권장*
+
+                - class 클래스명 impliments Runnable{ run(); }
+
+            3. Thread 상속 
+
+                - class 클래스 extends Thread{ run(); }
+
+        주요 메소드 :
+
+            1. run() : 
+
+                - 추상메소드 이면서 작업(멀티) 스레드가 처리할 코드의 시작점
+
+            2. start() :
+
+                - 구현된 run() 메소드 실행하는 메소드 , 주의 : Thread 클래스 제공
+        
+        * 활용처 :
+                
+            1. 톰캣(웹서버/SPRING) : 다수의 유저(클라이언트)가 1개의 서버(PC)에 요청 시 병렬처리 함
+            
+                - 동시 다발적으로 1개의 서버에 로그인 시도 or 채팅 요청 등 여러가지 할 때 병렬처리 함.
+
+                - (SPRING) : 멀티스레드 기본제공 (대규모 프로젝트용)
+                
+                - (NODE.JS) : 싱글스레드 (간단 프로젝트)
     */    
 
     //  [1] 단일(싱글) 스레드(thread) : (컴파일된) 코드들을 실행 흐름 단위 1개일 때
