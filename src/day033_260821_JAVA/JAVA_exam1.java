@@ -99,6 +99,7 @@ public class JAVA_exam1 {
     //      3. forEach( ( 반복변수명 ) -> { 실행문 } ) , key
 
                 map.keySet().forEach( (key) -> { System.out.println(key + " , " + map.get(key)); } );
+                
     //
     //
     //
